@@ -6,11 +6,12 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Run job1
-        run: echo "job1"
+      - name: Run first job
+        run: echo "first job"
 
   job2:
+    needs: job1
     runs-on: ubuntu-latest
     steps:
-      - name: Run job2
-        run: echo "job2"
+      - name: Run second job
+        run: echo "second job"
